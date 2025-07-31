@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page.title || @page.name %></title>
+    <meta name="description" content="<%= @page.meta_description %>">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <!-- TailwindCSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS for komponenter -->
+    <style>
+      .component-text { }
+      .component-image { }
+      .component-button { }
+      .component-header { }
+      .component-footer { }
+    </style>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

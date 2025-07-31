@@ -1,0 +1,15 @@
+<footer class="footer-component">
+  <div class="container mx-auto">
+    <p class="mb-4"><%= page_component.content['text'] || 'Footer tekst' %></p>
+    
+    <% if page_component.content['links'].present? %>
+      <div class="flex justify-center space-x-4">
+        <% page_component.content['links'].each do |link| %>
+          <a href="<%= link['url'] %>" class="hover:underline">
+            <%= link['text'] %>
+          </a>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</footer>

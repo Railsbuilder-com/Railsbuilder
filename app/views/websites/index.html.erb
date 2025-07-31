@@ -1,0 +1,22 @@
+<div class="flex justify-between items-center mb-6">
+  <h1 class="text-3xl font-bold">Mine Websites</h1>
+  <%= link_to "Nyt Website", new_website_path, class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <% unless @websites.nil? %>
+    <% @websites.each do |website| %>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-2"><%= website.name %></h3>
+        <p class="text-gray-600 mb-4"><%= website.domain %></p>
+        <div class="flex space-x-2">
+          <%= link_to "Åbn", website, class: "bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600" %>
+          <%= link_to "Rediger", edit_website_path(website), class: "bg-yellow-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600" %>
+          <%= link_to "Slet", website, method: :delete, 
+              confirm: "Er du sikker?", 
+              class: "bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

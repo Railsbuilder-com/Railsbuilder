@@ -1,0 +1,74 @@
+<div class="flex h-screen">
+  <!-- Sidebar med komponenter -->
+  <div class="w-64 bg-white shadow-lg p-4">
+    <h2 class="text-lg font-semibold mb-4">Komponenter</h2>
+    
+    <div class="space-y-2" id="component-library">
+      <% Component::COMPONENT_TYPES.each do |type| %>
+        <div class="component-item bg-gray-100 p-3 rounded cursor-move border-2 border-transparent hover:border-blue-300"
+             data-component-type="<%= type %>"
+             data-component-id="<%= Component.find_by(component_type: type)&.id %>">
+          <div class="flex items-center">
+            <span class="text-sm font-medium capitalize"><%= type.humanize %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+    <!-- Indstillinger panel -->
+    <div id="settings-panel" class="mt-8 hidden">
+      <h3 class="text-md font-semibold mb-2">Indstillinger</h3>
+      <div id="settings-content">
+        <!-- Indstillinger vil blive indlæst via JavaScript -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- Hovedområde -->
+  <div class="flex-1 flex flex-col">
+    <!-- Top bar -->
+    <%= form_with url: save_website_path, method: :post, local: true do %>
+      <%= hidden_field_tag :id, @website.id %>
+      <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors">
+        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12"></path>
+        </svg>
+        Save
+      </button>
+    <% end %>
+    
+    <!-- Canvas område -->
+    <div class="flex-1 bg-gray-50 p-8 overflow-auto">
+      <div class="max-w-4xl mx-auto bg-white shadow-lg min-h-full">
+        <div id="page-canvas" class="p-8" 
+             data-website-id="<%= @website.id %>" 
+             data-page-id="<%= @page.id %>">
+          
+          <% @components.each do |component| %>
+            <div class="page-component"
+                  data-component-id="<%= component["id"] %>"
+                  data-type="<%= component["type"] %>">
+              <% case component["type"] %>
+              <% when "header" %>
+                <h1 class="text-2xl font-bold"><%= component["content"] %></h1>
+              <% when "paragraph" %>
+                <p class="text-gray-700"><%= component["content"] %></p>
+              <% when "image" %>
+                <img src="<%= component["content"] %>" alt="" class="w-full h-auto rounded-lg">
+              <% else %>
+                <p>Ukendt komponent: <%= component["type"] %></p>
+              <% end %>
+            </div>
+          <% end %>
+            
+            
+          
+          <!-- Drop zone -->
+          <div id="drop-zone" class="min-h-32 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center text-gray-500">
+            Træk komponenter hertil for at tilføje dem til siden
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

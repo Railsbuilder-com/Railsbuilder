@@ -1,0 +1,10 @@
+<div class="website-container">
+  <% @components.each do |page_component| %>
+    <div class="component-wrapper" 
+         style="<%= inline_styles(page_component.styles) %>"
+         data-component-type="<%= page_component.component.component_type %>">
+      <%= render "page_components/#{page_component.component.component_type}", 
+                 page_component: page_component %>
+    </div>
+  <% end %>
+</div>

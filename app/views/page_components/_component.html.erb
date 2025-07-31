@@ -1,0 +1,16 @@
+<div class="page-component border-2 border-transparent hover:border-blue-300 relative group mb-2" 
+     data-component-id="<%= page_component.id %>"
+     data-position="<%= page_component.position %>">
+  
+  <!-- Component toolbar -->
+  <div class="absolute -top-8 right-0 hidden group-hover:flex space-x-1 bg-white shadow-md rounded px-2 py-1">
+    <button class="edit-component text-blue-500 hover:text-blue-700 text-sm">Rediger</button>
+    <button class="delete-component text-red-500 hover:text-red-700 text-sm">Slet</button>
+  </div>
+  
+  <!-- Component content -->
+  <div class="component-content" style="<%= inline_styles(page_component.styles) %>">
+    <%= render "page_components/#{page_component.component.component_type}", 
+               page_component: page_component %>
+  </div>
+</div>
