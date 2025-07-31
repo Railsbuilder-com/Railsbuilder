@@ -6,10 +6,10 @@ class CreateWebsites < ActiveRecord::Migration[7.0]
       t.text :description
       t.boolean :published, default: false
       t.json :settings, default: {}
-      
+
       t.timestamps
     end
-    
+
     add_index :websites, :domain, unique: true
   end
 end

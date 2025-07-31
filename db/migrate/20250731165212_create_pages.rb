@@ -8,10 +8,10 @@ class CreatePages < ActiveRecord::Migration[7.0]
       t.text :meta_description
       t.boolean :published, default: false
       t.json :seo_settings, default: {}
-      
+
       t.timestamps
     end
-    
-    add_index :pages, [:website_id, :slug], unique: true
+
+    add_index :pages, [ :website_id, :slug ], unique: true
   end
 end

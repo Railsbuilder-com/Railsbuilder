@@ -7,10 +7,10 @@ class CreatePageComponents < ActiveRecord::Migration[7.0]
       t.json :content, default: {}
       t.json :styles, default: {}
       t.boolean :visible, default: true
-      
+
       t.timestamps
     end
-    
-    add_index :page_components, [:page_id, :position]
+
+    add_index :page_components, [ :page_id, :position ]
   end
 end

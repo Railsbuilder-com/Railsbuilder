@@ -7,10 +7,10 @@ class CreateComponents < ActiveRecord::Migration[7.0]
       t.json :default_content, default: {}
       t.json :default_styles, default: {}
       t.boolean :active, default: true
-      
+
       t.timestamps
     end
-    
+
     add_index :components, :component_type
   end
 end
