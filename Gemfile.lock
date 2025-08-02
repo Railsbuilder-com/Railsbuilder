@@ -274,8 +274,6 @@ GEM
     reline (0.6.2)
       io-console (~> 0.5)
     rexml (3.4.1)
-    robocop (0.1.1)
-      rack
     rubocop (1.79.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -400,7 +398,6 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.2)
   redis
-  robocop
   rubocop-rails-omakase
   selenium-webdriver
   solid_cable
@@ -411,6 +408,9 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+
+RUBY VERSION
+   ruby 3.3.0p0
 
 BUNDLED WITH
    2.5.22
