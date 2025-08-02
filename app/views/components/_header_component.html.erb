@@ -1,0 +1,5 @@
+<%= render 'shared/component_wrapper', component: component do %>
+  <h1 class="text-4xl font-bold text-slate-800 leading-tight">
+    <%= component["content"] || "Your Heading Here" %>
+  </h1>
+<% end %>

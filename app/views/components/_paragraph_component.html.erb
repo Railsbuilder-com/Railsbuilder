@@ -1,0 +1,5 @@
+<%= render 'shared/component_wrapper', component: component do %>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    <%= component["content"] || "This is example text. Click 'Edit' to change it." %>
+  </p>
+<% end %>

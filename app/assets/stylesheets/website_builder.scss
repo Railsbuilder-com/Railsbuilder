@@ -1,0 +1,55 @@
+// Website Builder Styles
+
+.preview-mode {
+  .component-controls { 
+    display: none !important; 
+  }
+  
+  .page-component { 
+    border-color: transparent !important; 
+    
+    &:hover { 
+      border-color: transparent !important; 
+      box-shadow: none !important; 
+    }
+    
+    &:focus { 
+      outline: none !important; 
+      box-shadow: none !important; 
+    }
+  }
+}
+
+.drag-over { 
+  border-color: #3b82f6 !important; 
+  background-color: rgba(59, 130, 246, 0.05) !important; 
+}
+
+.page-component {
+  &:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+}
+
+// Component animations
+.component-item {
+  transition: all 0.2s ease-in-out;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+}
+
+// Toast notifications
+.toast {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+// Auto-save indicator
+#auto-save-indicator {
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+}

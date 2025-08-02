@@ -1,0 +1,70 @@
+<div class="w-80 bg-white/95 backdrop-blur-sm shadow-xl border-r border-slate-200/50">
+  <!-- Header -->
+  <div class="p-6 border-b border-slate-200/50 bg-gradient-to-r from-blue-50 to-indigo-50">
+    <h2 class="text-xl font-bold text-slate-800 mb-1">Components</h2>
+    <p class="text-sm text-slate-600">Drag to build your page</p>
+  </div>
+  
+  <!-- Component Library -->
+  <div class="p-6 space-y-6 overflow-y-auto max-h-[calc(100vh-120px)]">
+    <!-- Text Components -->
+    <div class="space-y-3">
+      <h3 class="text-sm font-semibold text-slate-700 uppercase tracking-wider">Text</h3>
+      <div class="space-y-2">
+        <%= render 'shared/component_item', 
+            type: 'header', 
+            icon_path: 'M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2z',
+            name: 'Heading',
+            description: 'H1, H2, H3 titles',
+            color: 'blue' %>
+        
+        <%= render 'shared/component_item', 
+            type: 'paragraph', 
+            icon_path: 'M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z',
+            name: 'Text',
+            description: 'Paragraphs & content',
+            color: 'purple' %>
+      </div>
+    </div>
+
+    <!-- Media Components -->
+    <div class="space-y-3">
+      <h3 class="text-sm font-semibold text-slate-700 uppercase tracking-wider">Media</h3>
+      <div class="space-y-2">
+        <%= render 'shared/component_item', 
+            type: 'image', 
+            icon_path: 'M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z',
+            name: 'Image',
+            description: 'Photos & graphics',
+            color: 'green' %>
+        
+        <%= render 'shared/component_item', 
+            type: 'video', 
+            icon_path: 'M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z',
+            name: 'Video',
+            description: 'Embed videos',
+            color: 'red' %>
+      </div>
+    </div>
+
+    <!-- Layout Components -->
+    <div class="space-y-3">
+      <h3 class="text-sm font-semibold text-slate-700 uppercase tracking-wider">Layout</h3>
+      <div class="space-y-2">
+        <%= render 'shared/component_item', 
+            type: 'container', 
+            icon_path: 'M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z',
+            name: 'Container',
+            description: 'Section wrapper',
+            color: 'orange' %>
+        
+        <%= render 'shared/component_item', 
+            type: 'columns', 
+            icon_path: 'M4 3a1 1 0 00-1 1v12a1 1 0 001 1h4a1 1 0 001-1V4a1 1 0 00-1-1H4zM12 3a1 1 0 00-1 1v12a1 1 0 001 1h4a1 1 0 001-1V4a1 1 0 00-1-1h-4z',
+            name: 'Columns',
+            description: 'Multi-column layout',
+            color: 'indigo' %>
+      </div>
+    </div>
+  </div>
+</div>
